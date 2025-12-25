@@ -1,0 +1,27 @@
+{
+  "name": "shopping-app",
+  "version": "1.0.0",
+  "description": "This is project of group \"The Five Force\" for SIT725 T3 2025.",
+  "keywords": [
+    "web",
+    "api",
+    "node",
+    "express",
+    "backend"
+  ],
+  "homepage": "https://github.com/thachoden/SIT725_ProjectT3#readme",
+  "bugs": {
+    "url": "https://github.com/thachoden/SIT725_ProjectT3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thachoden/SIT725_ProjectT3.git"
+  },
+  "license": "ISC",
+  "author": "The Five Force",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
