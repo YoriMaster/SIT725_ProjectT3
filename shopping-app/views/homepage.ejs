@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/carousel.css" />
+</head>
+<body>
+  <%- include('components/header') %>
+
+  <h1>Welcome to the Dynamic Page</h1>
+
+  <!-- Include carousel partial -->
+  <%- include('components/carousel') %>
+
+  <!-- Container where script will embed a div -->
+  <div id="dynamic-container"></div>
+
+  <%- include('components/footer') %>
+
+  <!-- Load carousel script -->
+  <script src="/js/carousel.js"></script>
+
+  <!-- Load other script -->
+  <script src="/js/script.js"></script>
+</body>
+</html>
