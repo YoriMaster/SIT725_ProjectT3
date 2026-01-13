@@ -94,3 +94,27 @@ body {
 .faq-item.open .faq-icon {
   content: "-";
 }
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.faq-search {
+  margin: 16px 0 24px;
+}
+
+.faq-search input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #c7d2fe;
+}
