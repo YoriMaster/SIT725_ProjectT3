@@ -10,20 +10,21 @@
 
   <body>
     <div class="page">
-        <a href="/" class="back-btn">← Back to Home</a>
+      <!-- Back button (polished pill style) -->
+      <a href="/" class="back-btn">
+        <span class="back-icon">←</span>
+        <span>Back to Home</span>
+      </a>
 
       <h1 class="title">Frequently Asked Questions</h1>
-       
-      <div class="faq-search">
-  <input
-    type="text"
-    id="faqSearch"
-    placeholder="Search FAQs..."
-  />
-</div>
 
-      <div id="faqContainer" class="faq-container">
+      <!-- Search -->
+      <div class="search-wrapper">
+        <input id="faqSearch" type="text" placeholder="Search FAQs..." />
       </div>
+
+      <!-- FAQ list -->
+      <div id="faqContainer" class="faq-container"></div>
     </div>
 
     <script src="/js/faq.js"></script>
