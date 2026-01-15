@@ -98,7 +98,7 @@ function updateQuantity(productId, qty) {
   }
 
   // qty <= 0 delete item
-  if (newQty <= 0) return removeFromCart(productId);
+  if (newQty <= 0) return removeItem(productId);
 
   const stock = getStock(product);
   if (newQty > stock) {
@@ -130,12 +130,6 @@ function removeItem(productId) {
   }
 
   recalcTotal();
-  return cartState;
-}
-
-function clearCart() {
-  cartState.items = [];
-  cartState.totalPrice = 0;
   return cartState;
 }
 

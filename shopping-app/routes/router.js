@@ -49,7 +49,7 @@ router.get("/api/faq-feedback", faqFeedbackController.getFaqFeedback);
 router.get("/api/cart", cartController.getCart);
 router.post("/api/cart/add", cartController.addItem);
 router.put("/api/cart/update", cartController.updateQuantity);
-router.delete("/api/cart/remove/:id", cartController.removeItem);
+router.delete("/api/cart/remove/:productId", cartController.removeItem);
 
 router.post("/api/checkout", checkoutController.checkout);
 
