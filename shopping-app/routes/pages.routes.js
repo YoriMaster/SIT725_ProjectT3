@@ -1,19 +1,31 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/cart", (req, res) => res.render("cart"));
-router.get("/checkout", (req, res) => res.render("checkout"));
-router.get("/confirmation", (req, res) => res.render("confirmation"));
 // ========= Pages =========
 
 // FAQ page
-router.get("/faq", (_req, res) => {
+router.get("/faq", (req, res) => {
   res.render("faq");
 });
 
 // Homepage
-router.get("/homepage", (_req, res) => {
+router.get("/homepage", (req, res) => {
   res.render("homepage", { title: "Home" });
+});
+
+// Cart page
+router.get("/cart", (req, res) => {
+  res.render("cart");
+});
+
+// Checkout page
+router.get("/checkout", (req, res) => {
+  res.render("checkout");
+});
+
+// Confirmation page
+router.get("/confirmation", (req, res) => {
+  res.render("confirmation");
 });
 
 module.exports = router;

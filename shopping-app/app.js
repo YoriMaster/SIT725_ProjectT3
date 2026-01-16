@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
 const path = require("path");
-
 const app = express();
 
 // database
@@ -19,8 +18,6 @@ app.use(express.json());
 // static files (css/js/icons/images)
 app.use(express.static(path.join(__dirname, "public")));
 
-const router = require("./routes/router");
-app.use("/", router);
 // routes
 const router = require('./routes');
 app.use('/', router);
