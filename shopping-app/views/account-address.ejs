@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title><%= title %></title>
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/account-common.css">
-  <link rel="stylesheet" href="/css/checkout.css" />
-  <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/account-common.css" />
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('components/navBar') %>
+    <div class="account-page">
+      <div class="breadcrumb">Home / My Account</div>
 
-</head>
-<body>
-  <%- include('components/navBar') %>
+      <div class="account-layout">
+        <aside class="account-sidebar">
+          <h3>Manage My Account</h3>
+          <ul>
+            <li class="<%= activePage === 'profile' ? 'active' : '' %>">
+              <a href="/account">My Profile</a>
+            </li>
+            <li class="<%= activePage === 'address' ? 'active' : '' %>">
+              <a href="/account/address">Address Book</a>
+            </li>
+            <li class="<%= activePage === 'payment' ? 'active' : '' %>">
+              <a href="/account/payment">My Payment Options</a>
+            </li>
+          </ul>
+        </aside>
 
-  <div class="account-page">
-    <div class="breadcrumb">Home / My Account</div>
-
-    <div class="account-layout">
-      <aside class="account-sidebar">
-        <h3>Manage My Account</h3>
-        <ul>
-          <li class="<%= activePage === 'profile' ? 'active' : '' %>"><a href="/account">My Profile</a></li>
-          <li class="<%= activePage === 'address' ? 'active' : '' %>"><a href="/account/address">Address Book</a></li>
-          <li class="<%= activePage === 'payment' ? 'active' : '' %>"><a href="/account/payment">My Payment Options</a></li>
-        </ul>
-      </aside>
-
-      <main class="account-card">
-        <div class="account-topbar">
-          <h2 class="account-title">Address Book</h2>
-          <div class="welcome">Welcome! <b><%= user.firstName %></b></div>
-        </div>
-
-        <div class="form-grid">
-          <div class="form-row" style="grid-column:1 / -1;">
-            <label>Address Line</label>
-            <input value="<%= address.line1 %>" />
+        <main class="account-card">
+          <div class="account-topbar">
+            <h2 class="account-title">Address Book</h2>
+            <div class="welcome">Welcome! <b><%= user.firstName %></b></div>
           </div>
 
-          <div class="form-row">
-            <label>City</label>
-            <input value="<%= address.city %>" />
+          <div class="form-grid">
+            <div class="form-row" style="grid-column: 1 / -1">
+              <label>Address Line</label>
+              <input value="<%= address.line1 %>" />
+            </div>
+
+            <div class="form-row">
+              <label>City</label>
+              <input value="<%= address.city %>" />
+            </div>
+
+            <div class="form-row">
+              <label>State</label>
+              <input value="<%= address.state %>" />
+            </div>
+
+            <div class="form-row">
+              <label>Postcode</label>
+              <input value="<%= address.postcode %>" />
+            </div>
+
+            <div class="form-row">
+              <label>Country</label>
+              <input value="<%= address.country %>" />
+            </div>
           </div>
 
-          <div class="form-row">
-            <label>State</label>
-            <input value="<%= address.state %>" />
+          <div class="actions">
+            <button class="btn btn-link">Cancel</button>
+            <button class="btn btn-primary">Save Address</button>
           </div>
-
-          <div class="form-row">
-            <label>Postcode</label>
-            <input value="<%= address.postcode %>" />
-          </div>
-
-          <div class="form-row">
-            <label>Country</label>
-            <input value="<%= address.country %>" />
-          </div>
-        </div>
-
-        <div class="actions">
-          <button class="btn btn-link">Cancel</button>
-          <button class="btn btn-primary">Save Address</button>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  </div>
-</body>
+    <%- include('components/footer') %>
+  </body>
 </html>

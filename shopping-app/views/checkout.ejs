@@ -22,43 +22,43 @@
         <div class="two">
           <label>
             First name
-            <input name="firstName" required />
+            <input class="checkout-input" name="firstName" required />
           </label>
           <label>
             Last name
-            <input name="lastName" required />
+            <input class="checkout-input" name="lastName" required />
           </label>
         </div>
 
         <label>
           Address line 1
-          <input name="address1" required />
+          <input class="checkout-input" name="address1" required />
         </label>
 
         <label>
           Address line 2 (optional)
-          <input name="address2" />
+          <input class="checkout-input" name="address2" />
         </label>
 
         <div class="two">
           <label>
             City
-            <input name="city" required />
+            <input class="checkout-input" name="city" required />
           </label>
           <label>
             State
-            <input name="state" required />
+            <input class="checkout-input" name="state" required />
           </label>
         </div>
 
         <div class="two">
           <label>
             Postcode
-            <input name="postcode" required />
+            <input class="checkout-input" name="postcode" required />
           </label>
           <label>
             Country
-            <input name="country" value="Australia" required />
+            <input class="checkout-input" name="country" value="Australia" required />
           </label>
         </div>
 
@@ -66,15 +66,15 @@
 
         <div class="pay-methods">
           <label class="radio">
-            <input type="radio" name="payMethod" value="card" checked />
+            <input class="checkout-input" type="radio" name="payMethod" value="card" checked />
             Credit / Debit Card
           </label>
           <label class="radio">
-            <input type="radio" name="payMethod" value="applepay" />
+            <input class="checkout-input" type="radio" name="payMethod" value="applepay" />
             Apple Pay (Mock)
           </label>
           <label class="radio">
-            <input type="radio" name="payMethod" value="afterpay" />
+            <input class="checkout-input" type="radio" name="payMethod" value="afterpay" />
             Afterpay (Mock)
           </label>
         </div>
@@ -83,23 +83,23 @@
         <div id="cardFields" class="card-fields">
           <label>
             Card number
-            <input name="cardNumber" inputmode="numeric" placeholder="4242 4242 4242 4242" />
+            <input class="checkout-input" name="cardNumber" inputmode="numeric" placeholder="4242 4242 4242 4242" />
           </label>
 
           <div class="two">
             <label>
               Expiry (MM/YY)
-              <input name="expiry" placeholder="12/34" />
+              <input class="checkout-input" name="expiry" placeholder="12/34" />
             </label>
             <label>
               CVC
-              <input name="cvc" inputmode="numeric" placeholder="123" />
+              <input class="checkout-input" name="cvc" inputmode="numeric" placeholder="123" />
             </label>
           </div>
 
           <label>
             Name on card
-            <input name="cardName" />
+            <input class="checkout-input" name="cardName" />
           </label>
         </div>
 

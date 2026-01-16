@@ -1,111 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Account</title>
-  <link rel="stylesheet" href="/css/checkout.css" />
-  <link rel="stylesheet" href="/css/account.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account</title>
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('components/navBar') %>
 
-</head>
-<body>
-
-  <main class="account-page">
-
-    <div class="breadcrumb">
-      <a href="/homepage">Home</a>
-      <span>/</span>
-      <span>My Account</span>
-    </div>
-
-    <div class="account-layout">
-
-      <!-- LEFT -->
-      <aside class="account-sidebar">
-        <h3>Manage My Account</h3>
-        <ul>
-          <li class="<%= activePage === 'profile' ? 'active' : '' %>">
-            <a href="/account">My Profile</a>
-          </li>
-          <li class="<%= activePage === 'address' ? 'active' : '' %>">
-            <a href="/account/address">Address Book</a>
-          </li>
-         <li class="<%= activePage === 'payment' ? 'active' : '' %>">
-           <a href="/account/payment">My Payment Options</a>
-         </li>
-
-        </ul>
-
-    
-      </aside>
-
-      <!-- RIGHT -->
-      <section class="account-content">
-        <div class="account-header">
-          <h2>Edit Your Profile</h2>
-          <p class="welcome">
-            Welcome! <span class="name"><%= user.firstName %></span>
-          </p>
-
-        </div>
-
-        <div class="profile-card">
-  <form class="profile-form">
-
-    <div class="form-grid">
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" value="<%= user.firstName %>">
-
+    <main class="account-page">
+      <div class="breadcrumb">
+        <a href="/homepage">Home</a>
+        <span>/</span>
+        <span>My Account</span>
       </div>
 
-      <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" value="<%= user.lastName %>">
+      <div class="account-layout">
+        <!-- LEFT -->
+        <aside class="account-sidebar">
+          <h3>Manage My Account</h3>
+          <ul>
+            <li class="<%= activePage === 'profile' ? 'active' : '' %>">
+              <a href="/account">My Profile</a>
+            </li>
+            <li class="<%= activePage === 'address' ? 'active' : '' %>">
+              <a href="/account/address">Address Book</a>
+            </li>
+            <li class="<%= activePage === 'payment' ? 'active' : '' %>">
+              <a href="/account/payment">My Payment Options</a>
+            </li>
+          </ul>
+        </aside>
 
+        <!-- RIGHT -->
+        <section class="account-content">
+          <div class="account-header">
+            <h2>Edit Your Profile</h2>
+            <p class="welcome">
+              Welcome! <span class="name"><%= user.firstName %></span>
+            </p>
+          </div>
+
+          <div class="profile-card">
+            <form class="profile-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" value="<%= user.firstName %>" />
+                </div>
+
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" value="<%= user.lastName %>" />
+                </div>
+
+                <div class="form-group full">
+                  <label>Email</label>
+                  <input type="email" value="<%= user.email %>" />
+                </div>
+
+                <div class="form-group full">
+                  <label>Address</label>
+                  <input type="text" value="<%= user.address %>" />
+                </div>
+              </div>
+
+              <h4 class="section-title">Password Changes</h4>
+
+              <div class="form-grid">
+                <div class="form-group full">
+                  <input type="password" placeholder="Current Password" />
+                </div>
+
+                <div class="form-group full">
+                  <input type="password" placeholder="New Password" />
+                </div>
+
+                <div class="form-group full">
+                  <input type="password" placeholder="Confirm New Password" />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn cancel">Cancel</button>
+                <button type="submit" class="btn save">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
-
-      <div class="form-group full">
-        <label>Email</label>
-        <input type="email" value="<%= user.email %>">
-
-      </div>
-
-      <div class="form-group full">
-        <label>Address</label>
-        <input type="text" value="<%= user.address %>">
-
-      </div>
-    </div>
-
-    <h4 class="section-title">Password Changes</h4>
-
-    <div class="form-grid">
-      <div class="form-group full">
-        <input type="password" placeholder="Current Password">
-      </div>
-
-      <div class="form-group full">
-        <input type="password" placeholder="New Password">
-      </div>
-
-      <div class="form-group full">
-        <input type="password" placeholder="Confirm New Password">
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <button type="button" class="btn cancel">Cancel</button>
-      <button type="submit" class="btn save">Save Changes</button>
-    </div>
-
-  </form>
-</div>
-
-      </section>
-
-    </div>
-  </main>
-
-</body>
+    </main>
+    <%- include('components/footer') %>
+  </body>
 </html>

@@ -1,11 +1,30 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: Arial, sans-serif; color: #111; background: #fff; }
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
 
-.account-page { padding: 28px 40px; }
+.account-page {
+  padding: 28px 40px;
+  min-height: 600px;
+}
 
-.breadcrumb { margin-bottom: 18px; font-size: 14px; }
-.breadcrumb a { text-decoration: none; color: #111; }
-.breadcrumb span { color: #666; margin: 0 6px; }
+.breadcrumb {
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #111;
+}
+.breadcrumb span {
+  color: #666;
+  margin: 0 6px;
+}
 
 .account-layout {
   display: grid;
@@ -15,11 +34,27 @@ body { margin: 0; font-family: Arial, sans-serif; color: #111; background: #fff;
 }
 
 /* Sidebar */
-.account-sidebar h3 { font-size: 14px; margin: 18px 0 8px; }
-.account-sidebar ul { list-style: none; padding: 0; margin: 0 0 12px; }
-.account-sidebar li { margin: 8px 0; }
-.account-sidebar a { text-decoration: none; color: #333; font-size: 14px; }
-.account-sidebar li.active a { color: #d11; font-weight: 700; }
+.account-sidebar h3 {
+  font-size: 14px;
+  margin: 18px 0 8px;
+}
+.account-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.account-sidebar li {
+  margin: 8px 0;
+}
+.account-sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+.account-sidebar li.active a {
+  color: #d11;
+  font-weight: 700;
+}
 
 /* Right */
 .account-header {
@@ -28,9 +63,20 @@ body { margin: 0; font-family: Arial, sans-serif; color: #111; background: #fff;
   align-items: center;
   margin-bottom: 12px;
 }
-.account-header h2 { margin: 0; font-size: 18px; color: #d11; }
-.welcome { margin: 0; font-size: 14px; color: #333; }
-.welcome .name { color: #d11; font-weight: 700; }
+.account-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #d11;
+}
+.welcome {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+.welcome .name {
+  color: #d11;
+  font-weight: 700;
+}
 
 .profile-card {
   border: 1px solid #eee;
@@ -41,8 +87,12 @@ body { margin: 0; font-family: Arial, sans-serif; color: #111; background: #fff;
 
 /* Mobile */
 @media (max-width: 900px) {
-  .account-page { padding: 18px 16px; }
-  .account-layout { grid-template-columns: 1fr; }
+  .account-page {
+    padding: 18px 16px;
+  }
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== FORM ===== */
@@ -123,5 +173,3 @@ body { margin: 0; font-family: Arial, sans-serif; color: #111; background: #fff;
     grid-template-columns: 1fr;
   }
 }
-
-

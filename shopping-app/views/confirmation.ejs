@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Order Confirmation</title>
-  <link rel="stylesheet" href="/css/checkout.css" />
-</head>
-<body>
-  <main class="container">
-    <header class="topbar">
-      <a href="/cart" class="back">← Continue shopping</a>
-      <h1>Order Confirmed</h1>
-      <div></div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('components/navBar') %>
 
-    <section class="card">
-      <p id="status" style="margin:0 0 10px;"></p>
-      <p id="orderId" style="margin:0 0 10px;"></p>
-      <div id="details"></div>
-      <div style="margin-top: 20px;">
-  <a href="/cart" class="back-btn">← Back to Cart (Mock)</a>
-</div>
-    </section>
-  </main>
+    <main class="container">
+      <div class="title">
+        <a href="/cart" class="back">← Continue shopping</a>
+        <h1>Order Confirmed</h1>
+        <div></div>
+      </div>
 
-  <script>
-    const data = sessionStorage.getItem("lastOrder");
-    const statusEl = document.getElementById("status");
-    const orderIdEl = document.getElementById("orderId");
-    const detailsEl = document.getElementById("details");
+      <section class="card">
+        <p id="status" style="margin: 0 0 10px"></p>
+        <p id="orderId" style="margin: 0 0 10px"></p>
+        <div id="details"></div>
+        <div style="margin-top: 20px">
+          <a href="/cart" class="back-btn">← Back to Cart (Mock)</a>
+        </div>
+      </section>
+    </main>
 
-    if(!data){
-      statusEl.textContent = "No recent order found.";
-      orderIdEl.textContent = "";
-    }else{
-      const order = JSON.parse(data);
-      statusEl.textContent = order.status;
-      orderIdEl.textContent = `Order ID: ${order.orderId}`;
+    <script>
+      const data = sessionStorage.getItem("lastOrder");
+      const statusEl = document.getElementById("status");
+      const orderIdEl = document.getElementById("orderId");
+      const detailsEl = document.getElementById("details");
 
-      detailsEl.innerHTML = `
+      if (!data) {
+        statusEl.textContent = "No recent order found.";
+        orderIdEl.textContent = "";
+      } else {
+        const order = JSON.parse(data);
+        statusEl.textContent = order.status;
+        orderIdEl.textContent = `Order ID: ${order.orderId}`;
+
+        detailsEl.innerHTML = `
         <p><strong>Total:</strong> $${Number(order.totalPrice).toFixed(2)}</p>
-        <p><strong>Payment:</strong> ${order.payment.method}${order.payment.last4 ? " (**** " + order.payment.last4 + ")" : ""}</p>
-        <p><strong>Ship to:</strong> ${order.shipping.address1}, ${order.shipping.city} ${order.shipping.postcode}</p>
+        <p><strong>Payment:</strong> ${order.payment.method}${
+          order.payment.last4 ? " (**** " + order.payment.last4 + ")" : ""
+        }</p>
+        <p><strong>Ship to:</strong> ${order.shipping.address1}, ${
+          order.shipping.city
+        } ${order.shipping.postcode}</p>
       `;
-    }
-  </script>
-</body>
+      }
+    </script>
+    <%- include('components/footer') %>
+  </body>
 </html>

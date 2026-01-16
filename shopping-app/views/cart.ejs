@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shopping Cart</title>
-  <link rel="stylesheet" href="/css/cart.css" />
-</head>
-<body>
-  <main class="container">
-    <h1 class="page-title">Shopping Cart</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/cart.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('components/navBar') %>
 
-    <div style="display:flex; gap:10px; margin:12px 0 18px;">
-  <button id="add1">Add item1</button>
-  <button id="add2">Add item2</button>
-  <button id="add3">Add item3</button>
-</div>
+    <main class="container">
+      <h1 class="page-title">Shopping Cart</h1>
 
+      <div style="display: flex; gap: 10px; margin: 12px 0 18px">
+        <button id="add1">Add item1</button>
+        <button id="add2">Add item2</button>
+        <button id="add3">Add item3</button>
+      </div>
 
-    <!-- Empty state -->
-    <section id="emptyState" class="empty hidden">
-      <div class="empty-icon">🛍️</div>
-      <h2>Your cart is empty</h2>
-      <p>Start adding items to your cart!</p>
-    </section>
+      <!-- Empty state -->
+      <section id="emptyState" class="empty hidden">
+        <div class="empty-icon">🛍️</div>
+        <h2>Your cart is empty</h2>
+        <p>Start adding items to your cart!</p>
+      </section>
 
-    <!-- Cart list -->
-    <section id="cartSection" class="cart">
-      <div id="cartList" class="cart-list"></div>
+      <!-- Cart list -->
+      <section id="cartSection" class="cart">
+        <div id="cartList" class="cart-list"></div>
 
-      <!-- Order Summary -->
-      <aside class="summary">
-        <h3>Order Summary</h3>
+        <!-- Order Summary -->
+        <aside class="summary">
+          <h3>Order Summary</h3>
 
-        <div class="summary-row">
-          <span class="muted">Subtotal</span>
-          <span id="subtotal">$0.00</span>
-        </div>
+          <div class="summary-row">
+            <span class="muted">Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
 
-        <div class="summary-row">
-          <span class="muted">Shipping</span>
-          <span class="free">Free</span>
-        </div>
+          <div class="summary-row">
+            <span class="muted">Shipping</span>
+            <span class="free">Free</span>
+          </div>
 
-        <div class="divider"></div>
+          <div class="divider"></div>
 
-        <div class="summary-row total">
-          <span>Total</span>
-          <span id="total" class="total-price">$0.00</span>
-        </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total" class="total-price">$0.00</span>
+          </div>
 
-        <button id="checkoutBtn" class="checkout">Checkout</button>
+          <button id="checkoutBtn" class="checkout">Checkout</button>
 
-        <div id="msg" class="msg"></div>
-      </aside>
-    </section>
-  </main>
+          <div id="msg" class="msg"></div>
+        </aside>
+      </section>
+    </main>
 
-  <script src="/js/cart.js"></script>
-</body>
+    <script src="/js/cart.js"></script>
+    <%- include('components/footer') %>
+  </body>
 </html>

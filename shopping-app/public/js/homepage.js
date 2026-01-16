@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Create cards for each category
     data.forEach(category => {
       const cardHTML = `
-        <div class="card" data-category-id="${category.category_id}">
+        <div class="category-card" data-category-id="${category.category_id}">
           <div class="card-icon">
             <img src="${category.icon}" alt="${category.name}" class="icon-image">
           </div>
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Function to handle card clicks
 function attachCardClickHandlers() {
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.category-card');
   
   cards.forEach(card => {
     card.addEventListener('click', handleCardClick);

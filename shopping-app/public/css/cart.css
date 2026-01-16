@@ -1,6 +1,5 @@
 :root{
-  --bg:#f7f7fb;
-  --card:#ffffff;
+  --bg:#ffffff;
   --text:#111827;
   --muted:#6b7280;
   --border:#e5e7eb;
@@ -61,8 +60,8 @@ body{
   gap: 14px;
 }
 
-.card{
-  background: var(--card);
+.card {
+  background: #f3f4f6;  /* Light gray */
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 14px;
@@ -167,7 +166,7 @@ body{
 
 /* Summary */
 .summary{
-  background: var(--card);
+  background: #f3f4f6;  /* Light gray */
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 18px;
