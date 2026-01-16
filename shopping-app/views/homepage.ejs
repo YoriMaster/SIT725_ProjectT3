@@ -12,16 +12,16 @@
   <body>
     <div class="main">
       <%- include('components/navBar') %>
+      <div class="page">
+        <!-- Include carousel partial -->
+        <%- include('components/carousel') %>
 
-      <!-- Include carousel partial -->
-      <%- include('components/carousel') %>
+        <!-- Category Container -->
+        <div id="category-container" class="category-container"></div>
 
-      <!-- Category Container -->
-      <div id="category-container" class="category-container"></div>
-
-      <!-- Product Container (NEW) -->
-      <div id="product-container" class="product-container"></div>
-
+        <!-- Product Container (NEW) -->
+        <div id="product-container" class="product-container"></div>
+      </div>
       <%- include('components/footer') %>
 
       <!-- Load carousel script -->
