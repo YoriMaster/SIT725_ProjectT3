@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f7fb;
+  color: #222;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Top bar */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+}
+.cart {
+  color: #222;
+  text-decoration: none;
+}
+
+/* Product layout */
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.product__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.title { margin: 0 0 8px; }
+.price {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.desc {
+  margin: 0 0 12px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.spec .row {
+  display: flex;
+  gap: 10px;
+  margin: 6px 0;
+}
+.label {
+  width: 60px;
+  color: #666;
+}
+.in-stock {
+  color: #1a7f37;
+  font-weight: 700;
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.qty input {
+  width: 70px;
+  padding: 6px;
+  margin-left: 6px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2f6fed;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.9; }
+
+.note {
+  margin-top: 12px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Details */
+.detail {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+}
+.detail h2 { margin: 0 0 10px; }
+.detail ul { margin: 0; padding-left: 18px; }
+
+/* Footer */
+.footer {
+  margin-top: 18px;
+  border-top: 1px solid #e6e6e6;
+  background: #fff;
+  color: #666;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .product { grid-template-columns: 1fr; }
+}
