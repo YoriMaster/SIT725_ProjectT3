@@ -15,6 +15,10 @@
 
 ## YULIN ZHUANG(YORI ZHUANG)
 - Sprint 1: 
+- Designed and implemented the shopping cart and checkout page interfaces
+- Implemented CRUD functionality for managing items in the shopping cart
+- Developed the checkout process to handle order submission and confirmation
+- Implemented basic validation to prevent invalid cart and checkout operations
 
 ## YUJIANG LAI
 - Sprint 1: 
