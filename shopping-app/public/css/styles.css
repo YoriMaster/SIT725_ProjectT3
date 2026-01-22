@@ -27,7 +27,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 15px 300px;
-  background-color: #f8f8f8;
+  background-color: rgb(193, 247, 255);
   gap: 30px;
 }
 
@@ -101,7 +101,7 @@ nav {
 
 nav a {
   color: #333;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.3s ease;
 }
 
@@ -109,6 +109,10 @@ nav a:hover {
   color: #007bff;
 }
 
+.logo-text {
+  font-size: 40px;
+  font-weight: 600;
+}
 /* ===== PRODUCT CARD STYLING ===== */
 
 .product-container {

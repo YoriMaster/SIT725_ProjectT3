@@ -1,85 +1,78 @@
 <!-- detail + reviews -->
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Detail</title>
-  <link rel="stylesheet" href="/css/product.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
 
-<body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="logo" href="/homepage">GoPick</a>
-      <a class="cart" href="/cart">Cart</a>
-    </div>
-  </header>
+  <body>
+    <%- include('components/navBar') %>
 
-  <main class="wrap">
-    <section class="product">
-      <!-- Left: image -->
-      <div class="product__image">
-        <!-- Picture -->
-        <img src="" alt="Product image">
-      </div>
-
-      <!-- Right: info -->
-      <div class="product__info">
-        <h1 class="title">Wireless Headphones</h1>
-        <p class="price">$129.00</p>
-
-        <p class="desc">
-          Simple product description goes here. Good for study/work, clear sound,
-          comfortable to wear.
-        </p>
-
-        <div class="spec">
-          <div class="row">
-            <span class="label">Color</span>
-            <span class="value">Black</span>
-          </div>
-          <div class="row">
-            <span class="label">Stock</span>
-            <span class="value in-stock">In stock</span>
-          </div>
+    <main class="wrap">
+      <section class="product">
+        <!-- Left: image -->
+        <div class="product__image">
+          <!-- Picture -->
+          <img src="" alt="Product image" />
         </div>
 
-        <div class="actions">
-          <label class="qty">
-            Qty:
-            <input type="number" min="1" value="1" />
-          </label>
+        <!-- Right: info -->
+        <div class="product__info">
+          <h1 class="title">Wireless Headphones</h1>
+          <p class="price">$129.00</p>
 
-          <button class="btn" type="button">Add to Cart</button>
+          <p class="desc">
+            Simple product description goes here. Good for study/work, clear
+            sound, comfortable to wear.
+          </p>
+
+          <div class="spec">
+            <div class="row">
+              <span class="label">Color</span>
+              <span class="value">Black</span>
+            </div>
+            <div class="row">
+              <span class="label">Stock</span>
+              <span class="value in-stock">In stock</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <label class="qty">
+              Qty:
+              <input type="number" min="1" value="1" />
+            </label>
+
+            <button class="btn" type="button">Add to Cart</button>
+          </div>
+
+          <p class="note">Free shipping over $59. 7-day return available.</p>
         </div>
+      </section>
 
-        <p class="note">Free shipping over $59. 7-day return available.</p>
-      </div>
-    </section>
-
-    <section class="detail">
-      <h2>Details</h2>
-      <ul>
-        <li>Bluetooth 5.3</li>
-        <li>Noise cancelling</li>
-        <li>Up to 40 hours battery</li>
-      </ul>
-    </section>
+      <section class="detail">
+        <h2>Details</h2>
+        <ul>
+          <li>Bluetooth 5.3</li>
+          <li>Noise cancelling</li>
+          <li>Up to 40 hours battery</li>
+        </ul>
+      </section>
 
       <!-- Reviews section -->
-    <section class="reviews">
-      <h2>Reviews</h2>
-      <p class="reviews__empty" hidden>No reviews yet.</p>
-      <ul class="reviews__list"></ul>
-    </section>
+      <section class="reviews">
+        <h2>Reviews</h2>
+        <p class="reviews__empty" hidden>No reviews yet.</p>
+        <ul class="reviews__list"></ul>
+      </section>
+    </main>
 
-  </main>
+    <%- include('components/footer') %>
 
-  <footer class="footer">
-    <div class="wrap">© 2026 GoPick</div>
-  </footer>
-
-  <script defer src="/js/product.js"></script>
-</body>
+    <script defer src="/js/product.js"></script>
+  </body>
 </html>
