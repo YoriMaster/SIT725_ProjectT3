@@ -3,6 +3,11 @@ const router = express.Router();
 
 // ========= Pages =========
 
+//Default base route will be redirected to homepage
+router.get("/", (req,res) => {
+  res.redirect("/homepage");
+})
+
 // FAQ page
 router.get("/faq", (req, res) => {
   res.render("faq", { title: "FAQs" });
