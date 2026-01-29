@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="/css/cart.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <%- include('components/navBar') %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="/css/cart.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <%- include('components/navBar') %>
 
     <main class="container">
       <h1 class="page-title">Shopping Cart</h1>
+
+<!-- Bulk actions toolbar -->
+      <div class="bulkbar" id="bulkbar">
+        <div class="bulkbar-left">
+          <label class="bulkbar-select">
+            <input type="checkbox" id="selectAll" />
+            Select All
+          </label>
+
+          <span id="selectedCount" class="bulkbar-count"></span>
+        </div>
+
+        <button id="deleteSelectedBtn" type="button" class="btn-danger" disabled>
+          Delete Selected
+        </button>
+      </div>
 
       <!-- Empty state -->
       <section id="emptyState" class="empty hidden">
@@ -19,6 +37,8 @@
         <h2>Your cart is empty</h2>
         <p>Start adding items to your cart!</p>
       </section>
+
+      
 
       <!-- Cart list -->
       <section id="cartSection" class="cart">
@@ -54,5 +74,6 @@
 
     <script src="/js/cart.js"></script>
     <%- include('components/footer') %>
-  </body>
+</body>
+
 </html>

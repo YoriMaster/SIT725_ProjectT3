@@ -1,5 +1,5 @@
-// services/cart.service.js
-const { PRODUCTS } = require("../config/mockData");
+
+const Product = require("../models/product.model");
 
 // use in-memory cart（mock）
 const cartState = {
@@ -17,9 +17,11 @@ function recalcTotal() {
   );
 }
 
-function findProduct(productId) {
+async function findProduct(productId) {
   const id = Number(productId);
-  return PRODUCTS.find((p) => Number(p.product_id) === id);
+  if (!Number.isFinite(id)) return null;
+
+  return Product.findOne({ product_id: id }).lean();
 }
 
 function getStock(product) {
@@ -33,14 +35,14 @@ function getCart() {
   return cartState;
 }
 
-function clearCart(){
+function clearCart() {
   cartState.items = [];
   cartState.totalPrice = 0;
   return cartState;
 }
 
-function addItem(productId, qty = 1) {
-  const product = findProduct(productId);
+async function addItem(productId, qty = 1) {
+  const product = await findProduct(productId);
   if (!product) {
     const err = new Error("Product not found");
     err.status = 404;
@@ -54,16 +56,20 @@ function addItem(productId, qty = 1) {
     throw err;
   }
 
-  const existing = cartState.items.find((it) => Number(it.productId) === Number(productId));
+  const existing = cartState.items.find(
+    (it) => Number(it.productId) === Number(product.product_id)
+  );
+
   const currentQty = existing ? existing.quantity : 0;
   const desiredQty = currentQty + addQty;
 
-  const stock = getStock(product);
+  const stock = typeof product.stock === "number" ? product.stock : Infinity;
   if (desiredQty > stock) {
     const err = new Error(`Not enough stock. Available: ${stock}`);
     err.status = 400;
     throw err;
   }
+  const priceNumber = Number(product.price?.toString?.() ?? product.price);
 
   if (existing) {
     existing.quantity = desiredQty;
@@ -71,7 +77,7 @@ function addItem(productId, qty = 1) {
     cartState.items.push({
       productId: Number(product.product_id),
       name: product.name,
-      price: Number(product.price),
+      price: priceNumber,
       image: product.image,
       categoryId: product.categoryId,
       quantity: addQty,
@@ -82,8 +88,8 @@ function addItem(productId, qty = 1) {
   return cartState;
 }
 
-function updateQuantity(productId, qty) {
-  const product = findProduct(productId);
+async function updateQuantity(productId, qty) {
+  const product = await findProduct(productId);
   if (!product) {
     const err = new Error("Product not found");
     err.status = 404;
@@ -97,17 +103,18 @@ function updateQuantity(productId, qty) {
     throw err;
   }
 
-  // qty <= 0 delete item
   if (newQty <= 0) return removeItem(productId);
 
-  const stock = getStock(product);
+  const stock = typeof product.stock === "number" ? product.stock : Infinity;
   if (newQty > stock) {
     const err = new Error(`Not enough stock. Available: ${stock}`);
     err.status = 400;
     throw err;
   }
 
-  const existing = cartState.items.find((it) => Number(it.productId) === Number(productId));
+  const existing = cartState.items.find(
+    (it) => Number(it.productId) === Number(product.product_id)
+  );
   if (!existing) {
     const err = new Error("Item not in cart");
     err.status = 404;
