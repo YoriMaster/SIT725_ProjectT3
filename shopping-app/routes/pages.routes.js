@@ -72,4 +72,9 @@ router.get("/product/:id", (req, res) => res.render("product", {user: req.sessio
 router.get("/admin",requireAdmin, (req, res) => {
   res.render("admin");
 });
+
+// sign up page
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
 module.exports = router;

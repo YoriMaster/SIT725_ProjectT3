@@ -50,20 +50,17 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      validate: {
-        validator: async function (value) {
-          const Role = mongoose.model("Roles");
-          const role = await Role.findOne({ role_id: value });
-          return role !== null;
-        },
-        message: "Invalid category ID",
-      },
+      enum: ["user", "admin"],
       default: "user",
     },
     status: {
       type: String,
       enum: ["active", "inactive", "deleted"],
       default: "active",
+    },
+    cart_id: {
+      type: String,
+      ref: "Cart",
     },
   },
   {

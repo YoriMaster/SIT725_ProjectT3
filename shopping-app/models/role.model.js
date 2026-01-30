@@ -14,4 +14,4 @@ const roleSchema = new mongoose.Schema(
   { collection: "roles", timestamps: true, strict: "throw" }
 );
 
-module.exports = new mongoose.model("Roles", roleSchema);
+module.exports = mongoose.model("Roles", roleSchema);

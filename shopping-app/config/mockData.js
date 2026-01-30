@@ -128,32 +128,6 @@ const PRODUCTS = [
   },
 ];
 
-const mockProducts = [
-  {
-    id: 1,
-    name: "Harry Potter The Complete Collection J.K Rowling 1 To 8 Book Set Kids NEW Books",
-    price: 68.08,
-    stock: 5,
-    category: "Books, Music & Movies",
-    image: "/images/harryPotterBookSet.webp",
-  },
-  {
-    id: 2,
-    name: "Mens 2 Piece Suit Slim Fit Wedding Dinner Suit Business Casual Jacket & AU",
-    price: 288.9,
-    stock: 10,
-    category: "Men's Clothing",
-    image: "/images/dinnerSuit.webp",
-  },
-  {
-    id: 3,
-    name: "JABULANI Football | OFFICIAL MATCH BALL | WORLD CUP 2010 SOCCER Ball Size 5",
-    price: 45.99,
-    stock: 2,
-    category: "Sporting Goods",
-    image: "/images/soccer_ball.webp",
-  },
-];
 const BANNERS = [
   {
     id: 1,
@@ -348,6 +322,110 @@ const REVIEWS = [
   },
 ];
 
+const CARTS = [
+  {
+    cart_id: "cart_001",
+    user_id: "user_001",
+    items: [
+      {
+        product_id: 1,
+        quantity: 1,
+        price: 299.99,
+        subtotal: 299.99,
+      },
+      {
+        product_id: 4,
+        quantity: 2,
+        price: 499.99,
+        subtotal: 999.98,
+      },
+    ],
+    total: 1299.97,
+    status: "active",
+  },
+  {
+    cart_id: "cart_002",
+    user_id: "user_002",
+    items: [
+      {
+        product_id: 2,
+        quantity: 1,
+        price: 599.99,
+        subtotal: 599.99,
+      },
+      {
+        product_id: 5,
+        quantity: 2,
+        price: 89.99,
+        subtotal: 179.98,
+      },
+    ],
+    total: 779.97,
+    status: "active",
+  },
+  {
+    cart_id: "cart_003",
+    user_id: "user_003",
+    items: [
+      {
+        product_id: 6,
+        quantity: 1,
+        price: 399.99,
+        subtotal: 399.99,
+      },
+      {
+        product_id: 3,
+        quantity: 1,
+        price: 159.99,
+        subtotal: 159.99,
+      },
+    ],
+    total: 559.98,
+    status: "active",
+  },
+  {
+    cart_id: "cart_004",
+    user_id: "user_004",
+    items: [
+      {
+        product_id: 1,
+        quantity: 3,
+        price: 299.99,
+        subtotal: 899.97,
+      },
+    ],
+    total: 899.97,
+    status: "active",
+  },
+  {
+    cart_id: "cart_005",
+    user_id: "user_005",
+    items: [],
+    total: 0,
+    status: "active",
+  },
+  {
+    cart_id: "cart_006",
+    user_id: "user_006",
+    items: [
+      {
+        product_id: 5,
+        quantity: 1,
+        price: 89.99,
+        subtotal: 89.99,
+      },
+      {
+        product_id: 3,
+        quantity: 2,
+        price: 159.99,
+        subtotal: 319.98,
+      },
+    ],
+    total: 409.97,
+    status: "active",
+  },
+];
+
 const USERS = [
   {
     user_id: "user_001",
@@ -356,6 +434,7 @@ const USERS = [
     password: "1",
     dob: new Date("2008-03-15"),
     phone: "5551234567",
+    cart_id: "cart_001",
     role: "user",
     status: "active",
   },
@@ -366,6 +445,7 @@ const USERS = [
     password: "1",
     dob: new Date("2007-07-22"),
     phone: "5552345678",
+    cart_id: "cart_002",
     role: "user",
     status: "active",
   },
@@ -376,6 +456,7 @@ const USERS = [
     password: "1",
     dob: new Date("2006-11-08"),
     phone: "5553456789",
+    cart_id: "cart_003",
     role: "user",
     status: "active",
   },
@@ -386,6 +467,7 @@ const USERS = [
     password: "1",
     dob: new Date("2008-05-30"),
     phone: "5554567890",
+    cart_id: "cart_004",
     role: "user",
     status: "active",
   },
@@ -396,6 +478,7 @@ const USERS = [
     password: "1",
     dob: new Date("2007-09-12"),
     phone: "5555678901",
+    cart_id: "cart_005",
     role: "user",
     status: "active",
   },
@@ -406,6 +489,7 @@ const USERS = [
     password: "1",
     dob: new Date("2009-01-25"),
     phone: "5556789012",
+    cart_id: "cart_006",
     role: "user",
     status: "active",
   },
@@ -416,6 +500,7 @@ const USERS = [
     password: "1",
     dob: new Date("2006-06-18"),
     phone: "5557890123",
+    cart_id: null,
     role: "admin",
     status: "active",
   },
@@ -564,6 +649,12 @@ const FAQS = [
   },
 ];
 
+const COUNTERS = [
+  {
+    seq: 8,
+  },
+];
+
 module.exports = {
   PRODUCTS,
   BANNERS,
@@ -573,5 +664,6 @@ module.exports = {
   REVIEWS,
   USERS,
   ROLES,
-  mockProducts,
+  CARTS,
+  COUNTERS,
 };

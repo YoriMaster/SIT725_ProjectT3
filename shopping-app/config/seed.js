@@ -13,6 +13,8 @@ const {
   REVIEWS,
   USERS,
   ROLES,
+  CARTS,
+  COUNTERS,
 } = require("./mockData");
 
 const bannerModel = require("../models/banner.model");
@@ -25,6 +27,8 @@ const productModel = require("../models/product.model");
 const reviewModel = require("../models/review.model");
 const roleModel = require("../models/role.model");
 const userModel = require("../models/user.model");
+const cartModel = require("../models/cart.model");
+const counterModel = require("../models/counter.model");
 
 const dataList = [
   PRODUCT_CATEGORIES,
@@ -35,6 +39,8 @@ const dataList = [
   ROLES,
   USERS,
   REVIEWS,
+  CARTS,
+  COUNTERS,
 ];
 
 const modelList = [
@@ -46,6 +52,8 @@ const modelList = [
   roleModel,
   userModel,
   reviewModel,
+  cartModel,
+  counterModel,
 ];
 
 async function seedAll() {
@@ -61,7 +69,7 @@ async function seedAll() {
       if (Array.isArray(data) && data.length > 0) {
         await model.insertMany(data);
         console.log(
-          `Inserted ${data.length} documents into ${model.modelName}`
+          `Inserted ${data.length} documents into ${model.modelName}`,
         );
       } else {
         console.log(`No data to insert for model ${model.modelName}`);
