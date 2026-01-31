@@ -168,6 +168,7 @@ function attachAddToCartHandlers() {
         }
 
         const cart = await res.json();
+        updateCartBadgeFromCart(cart);
         showCartModal();
       } catch (err) {
         console.error(err);
@@ -177,3 +178,17 @@ function attachAddToCartHandlers() {
   });
 }
 
+function updateCartBadgeFromCart(cart) {
+  const badge = document.getElementById("cartBadge");
+  if (!badge) return;
+
+  const items = Array.isArray(cart.items) ? cart.items : [];
+  const count = items.reduce((sum, it) => sum + Number(it.quantity || 0), 0);
+
+  if (count > 0) {
+    badge.textContent = String(count);
+    badge.style.display = "flex";
+  } else {
+    badge.style.display = "none";
+  }
+}
